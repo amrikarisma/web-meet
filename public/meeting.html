@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Web Meeting</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="icon" href="" type="image/x-icon">
+	<!-- MAIN CSS for override -->
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="./css/main.css">
+</head>
+
+<body>
+	<div id="wrapper" class="meeting">
+		<div id="meeting">
+			<div class="main-container">
+				<div class="main-screen">
+					<div id="meetingContainer">
+						<div class="call-wrap">
+							<div class="video-wrap" id="divUsers">
+								<div id="me" class="userbox display-center flex-column">
+									<h2 class="display-center">YOU</h2>
+									<div class="display-center">
+										<video autoplay muted playsinline="true" id="localVideoPlayer"
+											poster="https://loremflickr.com/640/360"></video>
+									</div>
+								</div>
+								<div id="otherTemplate" class="userbox display-center flex-column"
+									style="display: none;">
+									<h2 class="display-center"></h2>
+									<div class="display-center">
+										<video autoplay muted playsinline="true"
+											poster="https://loremflickr.com/640/360"></video>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="user-list">
+					<h5>参加ユーザー</h5>
+					<p class="close-btn user-list-btn">
+						<i class="icon-close"></i>
+					</p>
+					<div class="participant-list">
+						<ul>
+							<li>
+								<img src="https://loremflickr.com/640/360">
+								<div class="user-info">
+									<span class="user-name">YOU</span>
+									<span class="user-role">会議の主催者</span>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="meeting-icons">
+				<ul>
+					<li class="microphone enable">
+						<i class="fa fa-microphone"></i>
+						<span class="description">マイクのオン/オフ</span>
+					</li>
+					<li class="camera enable">
+						<i class="fa fa-video-camera"></i>
+						<span class="description">カメラのオン/オフ</span>
+					</li>
+					<li class="user-list-btn">
+						<i class="fa fa-users"></i>
+						<span class="description">参加ユーザーリストの表示/非表示</span>
+					</li>
+					<li id="endMeetingBtn">
+						<i class="fa fa-phone"></i>
+						<span class="description">退出</span>
+					</li>
+				</ul>
+			</div>
+			<div class="room-info" onclick="copyUrl(this, 'https://localhost')">
+				<p class="user-name">
+					YOU
+				</p>
+				<p class="room-url">
+					https://localhost
+				</p>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

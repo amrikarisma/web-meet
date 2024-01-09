@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Web Meeting</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<link rel="icon" href="" type="image/x-icon">
+	<!-- MAIN CSS for override -->
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="./css/main.css">
+</head>
+
+<body>
+	<div id="wrapper" class="meeting-preview">
+		<div id="meeting_preview">
+			<div class="call-wrap">
+				<div class="video-wrap" id="divUsers">
+					<div id="me" class="userbox display-center flex-column">
+						<div class="display-center">
+							<video autoplay muted playsinline="true" id="localVideoPlayer"
+								poster="https://loremflickr.com/640/360"></video>
+							<div class="meeting-icons">
+								<ul>
+									<li class="microphone enable">
+										<i class="fa fa-microphone"></i>
+										<span class="description">マイクのオン/オフ</span>
+									</li>
+									<li class="camera enable">
+										<i class="fa fa-video-camera"></i>
+										<span class="description">カメラのオン/オフ</span>
+									</li>
+
+								</ul>
+							</div>
+							<p>
+								<input type="text" name="username" value="">
+								<button type="button" class="btn btn-info mr-1" id="openMeeting"><i
+										class="fa fa-info-circle mr-1"></i><span>JOIN ROOM</span></button>
+								<button type="button" class="btn btn-secondary"
+									onclick="copyUrl(this, 'http://127.0.0.1:5500/')"><i
+										class="fa fa-copy mr-1"></i><span>COPY URL MEETING</span></button>
+							</p>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+	<script src="./js/meeting.js"></script>
+	<script>
+		const meetingUrl = 'http://127.0.0.1:5500/meeting.html';
+		const NODE_API_URL = 'https://localhost:3000';
+		let user = {
+			username: "A",
+			image_file_url: "https://loremflickr.com/640/360"
+		};
+		let meeting_id = "abc";
+		let is_organizer = true;
+		MyApp._init(user, meeting_id, is_organizer)
+
+
+
+		function copyUrl(_this, targetUrl) {
+			let copyTextArea = $(`<textarea>${targetUrl}</textarea>`);
+			$(_this).append(copyTextArea);
+			copyTextArea.select();
+			document.execCommand('copy');
+			copyTextArea.remove();
+			alert('招待用のURLをコピーしました');
+		}
+	</script>
+</body>
+
+</html>

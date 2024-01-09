@@ -1,0 +1,506 @@
+
+/*--------------------------------------------------------------
+  meeting
+--------------------------------------------------------------*/
+#meeting-ready video {
+    width: 100%;
+    height: 300px;
+    max-width: 500px;
+    margin-bottom: 15px;
+    background-color: #222;
+    border-radius: 2px;
+}
+
+#meeting-ready .meeting-icons ul {
+    margin: 0 0 35px 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#meeting-ready .meeting-icons ul li {
+    display: inline-block;
+    cursor: pointer;
+}
+
+#meeting-ready .meeting-icons ul li:not(:last-child) {
+    margin-right: 10px;
+}
+
+#meeting-ready .meeting-icons ul li i {
+    width: 25px;
+    height: 25px;
+    margin: 0 3.5px;
+    color: #fff;
+    background-color: #555;
+    border-radius: 50%;
+    font-size: 13px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#meeting-ready .meeting-icons ul li.enable i {
+    background-color: #f00;
+}
+
+#meeting-ready .meeting-icons ul li.enable i::after {
+    width: 22px;
+    height: 3px;
+    content: "";
+    background-color: #fff;
+    border: solid 1px #f00;
+    display: block;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+#meeting-ready .meeting-icons ul li i:hover {
+    opacity: .8;
+}
+
+#wrapper.meeting {
+    width: 100vw;
+    height: 100vh;
+    background-color: #111;
+    display: block;
+    position: relative;
+}
+
+#meeting {
+    width: 100vw;
+    height: 100vh;
+}
+
+#meeting .main-container {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+}
+
+#meeting .main-screen {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#meeting .main-screen img {
+    max-width: 100px;
+    border-radius: 50%;
+}
+
+#meeting .user-list {
+    width: 320px;
+    margin: 15px 15px 0 auto;
+    padding: 15px;
+    background-color: #fefefe;
+    border-radius: 3.5px;
+    position: relative;
+}
+
+#meeting .user-list .close-btn {
+    margin: 0;
+    font-size: 20px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    cursor: pointer;
+}
+
+#meeting .user-list .add-user {
+    margin-top: 15px;
+    padding: 8px 15px 5px 12px;
+    color: #007bff;
+    background-color: rgba(135, 206, 250, .5);
+    border-radius: 3px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: baseline;
+    cursor: pointer;
+}
+
+
+#meeting .user-list .add-user:hover {
+    opacity: .7;
+}
+
+#meeting .user-list .search-user {
+    width: 100%;
+    padding: 5px;
+    border: solid 1px #ccc;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+#meeting .user-list .search-user i {
+    margin: 0 8px;
+}
+
+#meeting .user-list .search-user input {
+    width: 100%;
+    padding: 3px;
+    border: none;
+    font-size: inherit;
+}
+
+#meeting .user-list .search-user input:focus {
+    outline: none;
+}
+
+#meeting .user-list .participant-list {
+    margin-top: 25px;
+    list-style-type: none;
+}
+
+#meeting .user-list .participant-list > ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+#meeting .user-list .participant-list > ul > li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+#meeting .user-list .participant-list > ul > li img {
+    width: 15%;
+    max-width: 60px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+
+#meeting .user-list .participant-list > ul > li .user-info span {
+    display: block;
+}
+
+
+#meeting .user-list .participant-list > ul > li .user-info .user-role {
+    font-size: 11px;
+    color: #aaa;
+}
+
+#meeting .user-list .participant-list > ul > li .action {
+    margin: 0 0 0 auto;
+    position: relative;
+    cursor: pointer;
+}
+
+#meeting .user-list .participant-list > ul > li .action ul {
+    width: 80px;
+    padding: 2px;
+    background-color: #fff;
+    border: solid 1px #ccc;
+    border-radius: 3.5px;
+    display: none;
+    list-style-type: none;
+    position: absolute;
+    right: 0;
+    z-index: 1;
+}
+
+#meeting .user-list .participant-list > ul > li .action:hover ul {
+    display: block;
+}
+
+#meeting .user-list .participant-list > ul > li .action ul li:hover {
+    background-color: #ddd;
+}
+
+#meeting .user-list .participant-list > ul > li .action ul li {
+    padding: 5px;
+    font-size: 13px;
+    color: #5A5A5A;
+    display: block;
+}
+
+#meeting .meeting-icons {
+    width: 100%;
+    position: fixed;
+    left: 0;
+    bottom: 2.5vh;
+}
+
+#meeting .meeting-icons ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+#meeting .meeting-icons ul li {
+    width: 40px;
+    height: 40px;
+    margin: 0 3.5px;
+    color: #fff;
+    background-color: #555;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#meeting .meeting-icons ul li:last-child {
+    width: 60px;
+    border-radius: 20px;
+    background-color: #f00;
+}
+
+#meeting .meeting-icons ul li.enable {
+    background-color: #f00;
+}
+
+#meeting .meeting-icons ul li.enable::after {
+    width: 32px;
+    height: 3px;
+    content: "";
+    background-color: #fff;
+    border: solid 1px #f00;
+    display: block;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+#meeting .meeting-icons ul li:hover {
+    opacity: .8;
+}
+
+#meeting .meeting-icons ul li i {
+    font-size: 17px;
+}
+
+#meeting .meeting-icons ul li:last-child i {
+    font-size: 25px;
+    transform: rotate(135deg);
+}
+
+#meeting .meeting-icons ul li span.description {
+    padding: 3px 5px;
+    background-color: #aaa;
+    border-radius: 3px;
+    font-size: 13px;
+    position: absolute;
+    top: -30px;
+    display: none;
+}
+
+#meeting .meeting-icons ul li:hover span.description {
+    display: block;
+}
+
+#meeting .room-info {
+    padding: 10px;
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 3px;
+    color: #fff;
+    position: fixed;
+    left: 2%;
+    bottom: 3vh;
+    cursor: pointer;
+}
+
+#meeting .room-info p {
+    margin: 0;
+}
+
+#meeting #meetingContainer {
+    flex-basis: 75%;
+    display: none;
+}
+
+#meeting #meetingContainer .display-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+#meeting #meetingContainer .video-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#meeting #meetingContainer video {
+    width: 12vw;
+    height: 12vw;
+    max-width: 220px;
+    max-height: 220px;
+}
+
+#meeting #meetingContainer .userbox {
+    width: 12vw;
+    height: 12vw;
+    max-width: 220px;
+    max-height: 220px;
+    background-color: #222;
+    margin: 20px;
+    position: relative;
+}
+
+#meeting #meetingContainer h2.display-center {
+    width: 100%;
+    height: 30px;
+    margin: 0;
+    color: #fff;
+    font-size: 14px;
+    position: absolute;
+    top: -30px;
+    left: 0;
+}
+#meeting video.loaded, #meeting-ready video.loaded {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+#meeting_preview .display-center {
+    text-align: center;
+}
+
+#meeting_preview .meeting-icons {
+    width: 100%;
+}
+
+#meeting_preview .meeting-icons ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+}
+
+#meeting_preview .meeting-icons ul li {
+    width: 40px;
+    height: 40px;
+    margin: 0 3.5px;
+    color: #fff;
+    background-color: #555;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#meeting_preview .meeting-icons ul li.enable {
+    background-color: #f00;
+}
+
+#meeting_preview .meeting-icons ul li.enable::after {
+    width: 32px;
+    height: 3px;
+    content: "";
+    background-color: #fff;
+    border: solid 1px #f00;
+    display: block;
+    position: absolute;
+    transform: rotate(45deg);
+}
+
+#meeting_preview .meeting-icons ul li:hover {
+    opacity: .8;
+}
+
+#meeting_preview .meeting-icons ul li i {
+    font-size: 17px;
+}
+
+#meeting_preview .meeting-icons ul li span.description {
+    padding: 3px 5px;
+    background-color: #aaa;
+    border-radius: 3px;
+    font-size: 13px;
+    position: absolute;
+    top: -30px;
+    display: none;
+}
+
+#meeting_preview .meeting-icons ul li:hover span.description {
+    display: block;
+}
+
+@media screen and (max-width: 640px) {
+    #meeting #meetingContainer {
+        height: 42vh;
+        margin-top: 15vh;
+        padding: 10px;
+        overflow: scroll;
+        flex-basis: 100%;
+    }
+}
+@media screen and (max-width: 767px) {
+	/* meeting */
+    #meeting .main-container {
+        flex-direction: column;
+    }
+
+    #meeting .main-screen {
+        height: 100%;
+    }
+
+    #meeting .user-list {
+        width: 95%;
+        padding: 3vw;
+        margin: 15px auto 0 auto;
+    }
+
+    #meeting .user-list h5 {
+        font-size: 4vw;
+    }
+
+    #meeting .user-list .participant-list {
+        max-height: 15vh;
+        overflow-y: scroll;
+    }
+
+    #meeting .user-list .participant-list > ul > li {
+        margin-bottom: 8px;
+    }
+
+    #meeting .user-list .participant-list > ul > li img {
+        width: 14%;
+        max-width: 50px;
+    }
+
+    #meeting .user-list .participant-list > ul > li .action {
+        margin-right: 3.5%;
+    }
+
+    #meeting .room-info {
+        width: calc(100vw - 2vh);
+        top: 1vh;
+        left: 1vh;
+        bottom: auto;
+    }
+
+    #meeting .room-info p {
+        width: 100%;
+        overflow: hidden;
+	    text-overflow: ellipsis;
+	    white-space: nowrap;
+    }
+
+    #meeting #meetingContainer h2.display-center {
+        font-size: 3vw;
+    }
+
+    #meeting #meetingContainer video {
+        width: 23vw;
+        height: 23vw;
+        max-width: 23vw;
+        max-height: 23vw;
+    }
+
+    #meeting #meetingContainer .userbox {
+        width: 23vw;
+        height: 23vw;
+        max-width: 23vw;
+        max-height: 23vw;
+        margin: 4vw;
+    }
+}
