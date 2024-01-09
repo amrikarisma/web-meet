@@ -2,6 +2,11 @@
 	"name": "web-meet",
 	"version": "1.0.0",
 	"description": "Web meet with webrtc",
+	"homepage": "https://github.com/amrikarisma/web-meet",
+	"bugs": {
+		"url": "https://github.com/amrikarisma/web-meet/issues",
+		"email": "amrikarisma@live.com"
+	},
 	"main": "server.js",
 	"scripts": {
 		"start": "node server.js",
